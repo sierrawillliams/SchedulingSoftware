@@ -1,0 +1,25 @@
+<!-- schedule.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule</title>
+</head>
+<body>
+    <h1>Schedule</h1>
+    <ul>
+        {% for schedule in schedules %}
+            <li>
+                {% if schedule.employee %}
+                    Employee: {{ schedule.employee.name }}<br>
+                {% else %}
+                    Employee: (No Employee)<br>
+                {% endif %}
+                Start Date: {{ schedule.start_date }}<br>
+                End Date: {{ schedule.end_date }}
+            </li>
+        {% empty %}
+            <li>No schedules available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
